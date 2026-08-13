@@ -1,0 +1,17 @@
+<div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
+    <div class="container text-center py-5">
+        <div class="d-flex justify-content-center mb-4">
+            <a class="btn btn-light btn-social mr-2" href="https://x.com/bordea_valentin" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a class="btn btn-light btn-social mr-2" href="https://www.facebook.com/liviu.valentinbordea" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-light btn-social mr-2" href="https://www.linkedin.com/in/bordeavalentin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-light btn-social" href="https://www.instagram.com/valentinbordea/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="d-flex justify-content-center mb-3">
+            <a class="text-white" href="/privacy">Privacy</a><span class="px-3">|</span>
+            <a class="text-white" href="/terms">Terms</a><span class="px-3">|</span>
+            <a class="text-white" href="/faqs">FAQs</a><span class="px-3">|</span>
+            <a class="text-white" href="/help">Help</a>
+        </div>
+        <p class="m-0">&copy; <a class="text-white font-weight-bold" href="/">valentinbordea.com</a>. All Rights Reserved.</p>
+    </div>
+</div>

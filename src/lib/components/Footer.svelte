@@ -12,6 +12,6 @@
             <a class="text-white" href="/faqs">FAQs</a><span class="px-3">|</span>
             <a class="text-white" href="/help">Help</a>
         </div>
-        <p class="m-0">&copy; <a class="text-white font-weight-bold" href="/">valentinbordea.com</a>. All Rights Reserved.</p>
+        <p class="m-0">&copy; Copyright 2026. <a class="text-white font-weight-bold" href="/">valentinbordea.com</a>. All Rights Reserved.</p>
     </div>
 </div>

@@ -78,6 +78,68 @@
 		line-height: 1.5;
 		margin-bottom: 0;
 	}
+
+	@media (max-width: 899px) {
+		.page-container {
+			width: 100%;
+			max-width: 100%;
+			padding: 90px 15px 40px;
+			box-sizing: border-box;
+		}
+
+		.page-container h2 {
+			font-size: 1.8rem;
+			line-height: 1.25;
+			margin-bottom: 10px !important;
+		}
+
+		.page-container > p {
+			font-size: 0.95rem;
+			line-height: 1.5;
+			margin-bottom: 30px !important;
+			padding: 0 10px;
+		}
+
+		.project-grid {
+			grid-template-columns: 1fr;
+			gap: 18px;
+			width: 100%;
+		}
+
+		.card-item {
+			width: 100%;
+			min-width: 0;
+			border-radius: 10px;
+		}
+
+		.img-wrapper {
+			width: 100%;
+			height: 200px;
+		}
+
+		.img-wrapper img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			padding: 15px;
+			box-sizing: border-box;
+		}
+
+		.card-content {
+			padding: 16px;
+		}
+
+		.card-content h3 {
+			font-size: 1.1rem;
+			line-height: 1.3;
+			margin-bottom: 6px;
+		}
+
+		.card-content p {
+			font-size: 0.9rem;
+			line-height: 1.5;
+		}
+	}
 </style>
 
 <div class="container page-container">

@@ -3,3 +3,11 @@
         <h1 class="m-0">vBordea</h1>
     </a>
 </div>
+
+<style>
+    @media (max-width: 899px) {
+        .fixed-top {
+            padding-left: 20px !important;
+        }
+    }
+</style>

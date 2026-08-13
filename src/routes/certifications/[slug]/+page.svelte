@@ -40,6 +40,68 @@
 	.back-btn:hover {
 		text-decoration: underline;
 	}
+
+	@media (max-width: 899px) {
+		.detail-container {
+			width: 100%;
+			max-width: 100%;
+			padding: 90px 20px 40px;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		.detail-container h1 {
+			font-size: 1.8rem;
+			line-height: 1.25;
+			margin-bottom: 20px;
+		}
+
+		.hero-img {
+			display: block !important;
+			width: 100% !important;
+			max-width: 100% !important;
+			height: auto !important;
+			max-height: 500px !important;
+			object-fit: contain !important;
+			padding: 5px;
+			box-sizing: border-box;
+			margin: 20px auto 28px !important;
+			border: 4px solid #f8f9fa;
+			border-radius: 10px;
+			box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+		}
+
+		.content-body {
+			width: 100%;
+			font-size: 1rem;
+			line-height: 1.65;
+			text-align: left;
+			overflow-wrap: break-word;
+			word-wrap: break-word;
+		}
+
+		.content-body :global(img) {
+			max-width: 100% !important;
+			height: auto !important;
+		}
+
+		.content-body :global(iframe) {
+			width: 100% !important;
+			max-width: 100% !important;
+		}
+
+		.content-body :global(video) {
+			width: 100% !important;
+			max-width: 100% !important;
+			height: auto !important;
+		}
+
+		.back-btn {
+			margin-top: 30px;
+			font-size: 0.95rem;
+			line-height: 1.4;
+		}
+	}
 </style>
 
 <div class="container detail-container text-center">

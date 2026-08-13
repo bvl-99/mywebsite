@@ -16,8 +16,9 @@
 		max-width: 820px;
 	}
 	.hero-img {
-		max-width: 100%;
-		max-height: 380px;
+		max-width: 450px;
+		width: 100%;
+		height: auto;
 		object-fit: contain;
 		border-radius: 12px;
 		box-shadow: 0 6px 18px rgba(0,0,0,0.08);

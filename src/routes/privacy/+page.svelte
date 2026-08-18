@@ -1,8 +1,8 @@
 <svelte:head>
     <title>Privacy Policy | vBordea</title>
-    <meta name="description" content="How data is handled, stored, and protected on vBordea." />
+    <meta name="description" content="How data is handled, stored, and protected on our website." />
     <meta property="og:title" content="Privacy Policy | vBordea" />
-    <meta property="og:description" content="Data handling and privacy practices for vBordea." />
+    <meta property="og:description" content="Data handling and privacy practices for our website." />
     <meta property="og:type" content="website" />
 </svelte:head>
 

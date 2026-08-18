@@ -5,7 +5,7 @@
 
 <svelte:head>
 	<title>Personal Projects | vBordea</title>
-	<meta name="description" content="Personal software engineering and security projects by vBordea." />
+	<meta name="description" content="Personal software engineering and security projects by Valentin." />
 </svelte:head>
 
 <style>

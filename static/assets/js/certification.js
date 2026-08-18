@@ -6,12 +6,12 @@ const cert = urlParams.get('cert'); // Get 'cert' parameter from URL
 const certifications = {
 	bitcoin: {
 		title: 'Introduction to Bitcoin',
-		img: 'img/Introduction_to_Bitcoin.jpg',
+		img: 'img/Introduction_to_Bitcoin.webp',
 		description: 'Certification on the fundamentals of Bitcoin and cryptocurrency.'
 	},
 	cybersecurity: {
 		title: 'Introduction to Cybersecurity',
-		img: 'img/Introduction_to_cybersecurity.jpg',
+		img: 'img/Introduction_to_cybersecurity.webp',
 		description: 'Basic understanding of cybersecurity principles and practices.'
 	}
 };

@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', function () {
 	const projectDetails = {
 		TikTokGame: {
 			title: 'TikTok Interactive Game',
-			image: 'img/triviaquizloading.jpg',
+			image: 'img/triviaquizloading.webp',
 			description: 'API-based TikTok Live Trivia Game.'
 		},
 		RFIDsecurity: {
 			title: 'RFID Security Project',
-			image: 'img/rfid125khz.jpg',
+			image: 'img/rfid125khz.webp',
 			description: 'Exploring Android NFC for 13.56 MHz RFID card emulation.'
 		}
 	};

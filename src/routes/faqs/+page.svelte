@@ -1,6 +1,6 @@
 <svelte:head>
     <title>FAQs | vBordea</title>
-    <meta name="description" content="Quick answers regarding development, security audits, and work inquiries with vBordea." />
+    <meta name="description" content="Quick answers regarding development, security audits, and work inquiries with Valentin." />
     <meta property="og:title" content="FAQs | vBordea" />
     <meta property="og:description" content="Frequently asked questions about engineering and services." />
     <meta property="og:type" content="website" />
@@ -54,7 +54,7 @@
             </div>
             <div id="fCollapseThree" class="collapse" aria-labelledby="fHeadingThree" data-parent="#faqAccordion">
                 <div class="card-body">
-                    Yes. Depending on current project commitments, I take on select web development, refactoring, or security consulting contracts. Drop a note through the contact form to discuss scope.
+                    Yes. Depending on current project commitments. Drop a note through the contact form to discuss scope.
                 </div>
             </div>
         </div>

@@ -1,8 +1,8 @@
 <svelte:head>
     <title>Terms & Conditions | vBordea</title>
-    <meta name="description" content="Terms and conditions governing the use of vBordea." />
+    <meta name="description" content="Terms and conditions governing the use of our website." />
     <meta property="og:title" content="Terms & Conditions | vBordea" />
-    <meta property="og:description" content="Service guidelines and terms for vBordea." />
+    <meta property="og:description" content="Service guidelines and terms for our website." />
     <meta property="og:type" content="website" />
 </svelte:head>
 
@@ -41,7 +41,7 @@
             </div>
             <div id="tCollapseTwo" class="collapse" aria-labelledby="tHeadingTwo" data-parent="#termsAccordion">
                 <div class="card-body">
-                    All original branding, designs, and content belong to vBordea. Client projects or open-source software referenced maintain their respective licenses and agreements.
+                    All original branding, designs, and content are created and owned by the author, Valentin. Client projects or open-source software referenced maintain their respective licenses and agreements.
                 </div>
             </div>
         </div>

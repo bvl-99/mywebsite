@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const projectDetails = {
 		learn_and_play_for_kids: {
 			title: 'Bachelor’s Thesis Project',
-			image: 'img/learn_and_play_for_kids.jpg',
+			image: 'img/learn_and_play_for_kids.webp',
 			description:
 				'Bachelor’s thesis project on developing an educational mobile app for children, integrating learning and interactive games.'
 		},

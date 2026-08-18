@@ -14,8 +14,8 @@ export const projects: Project[] = [
 		title: 'TikTok Interactive Live Game',
 		category: 'personal',
 		summary: 'Real-time API-driven live trivia experience built with Python and TikTok Live API.',
-		thumbnail: '/assets/img/triviaquizloading.jpg',
-		detailImage: '/assets/img/triviaquizloading.jpg',
+		thumbnail: '/assets/img/triviaquizloading.webp',
+		detailImage: '/assets/img/triviaquizloading.webp',
 		descriptionHtml: `
 			<p>Engineered an interactive live-streaming game for TikTok Live that processes user commentary in real time without relying on traditional video streams. Built using Python, the system captures screen interactions and streams dynamic visual updates to viewers.</p>
 
@@ -23,14 +23,14 @@ export const projects: Project[] = [
 			<p>The platform listens to live comment feeds using API sockets, parsing viewer responses against current quiz challenges and image puzzles. System mechanics track usernames, profile images, and precise response latency.</p>
 
 			<div class="text-center my-4">
-				<img src="/assets/img/triviaquizgamedemo.jpg" alt="Game Demo Interface" class="img-fluid rounded shadow-sm" style="max-width: 320px;" />
+				<img src="/assets/img/triviaquizgamedemo.webp" alt="Game Demo Interface" class="img-fluid rounded shadow-sm" style="max-width: 320px;" />
 			</div>
 
 			<h4 class="h5 font-weight-bold mt-4 mb-2">Real-Time Leaderboard Engine</h4>
 			<p>Responses are scored instantaneously. The fastest correct answers render live on screen alongside player profile pictures, maintaining an active top-five leaderboard that drives viewer competition and stream retention.</p>
 
 			<div class="text-center my-4">
-				<img src="/assets/img/triviaquizgamelive.jpg" alt="TikTok Live Demonstration" class="img-fluid rounded shadow-sm" style="max-width: 520px;" />
+				<img src="/assets/img/triviaquizgamelive.webp" alt="TikTok Live Demonstration" class="img-fluid rounded shadow-sm" style="max-width: 520px;" />
 			</div>
 
 			<p>This project highlights real-time data ingestion, event-driven socket handling, and social media API integration to create low-latency interactive media.</p>
@@ -41,8 +41,8 @@ export const projects: Project[] = [
 		title: 'NFC Access Control & RFID Emulation',
 		category: 'personal',
 		summary: 'Security research investigating 13.56 MHz RFID emulation on Android NFC architectures.',
-		thumbnail: '/assets/img/rfid125khz.jpg',
-		detailImage: '/assets/img/rfid125khz.jpg',
+		thumbnail: '/assets/img/rfid125khz.webp',
+		detailImage: '/assets/img/rfid125khz.webp',
 		descriptionHtml: `
 			<p>An applied cybersecurity research project exploring smartphone-based access control emulation (13.56 MHz High Frequency) to replace legacy physical RFID badges with Android devices.</p>
 
@@ -61,8 +61,8 @@ export const projects: Project[] = [
 		title: 'Learn & Play for Kids',
 		category: 'educational',
 		summary: 'Bachelor Thesis: Gamified, interactive Android learning system engineered in Java for early childhood education.',
-		thumbnail: '/assets/img/learn_and_play_for_kids.jpg',
-		detailImage: '/assets/img/learn_and_play_for_kids.jpg',
+		thumbnail: '/assets/img/learn_and_play_for_kids.webp',
+		detailImage: '/assets/img/learn_and_play_for_kids.webp',
 		descriptionHtml: `
 			<p class="lead">Developed as my Bachelor’s Thesis at the West University of Timișoara, <em>Learn and Play for Kids</em> is an Android educational suite engineered to replace static physical worksheets with an interactive, screen-assisted learning platform during remote learning scenarios.</p>
 
@@ -81,8 +81,8 @@ export const projects: Project[] = [
 		title: 'AI Image Reconstruction in Cybersecurity',
 		category: 'educational',
 		summary: 'Master Thesis: Comparative analysis of GANs, Diffusion Models, VAEs, and Transformers for digital forensics.',
-		thumbnail: '/assets/img/image_reconstruction.jpg',
-		detailImage: '/assets/img/image_reconstruction.jpg',
+		thumbnail: '/assets/img/image_reconstruction.webp',
+		detailImage: '/assets/img/image_reconstruction.webp',
 		descriptionHtml: `
 			<p class="lead">Engineered as my Master’s Dissertation in Cybersecurity at the West University of Timișoara, this research evaluates state-of-the-art Deep Learning generative architectures for digital forensics, tamper restoration, deepfake detection, and synthetic forensic dataset generation.</p>
 
@@ -104,8 +104,8 @@ export const projects: Project[] = [
 		title: 'Bitcoin & Open Blockchains Workshop',
 		category: 'certification',
 		summary: 'Professional workshop certification on Bitcoin consensus protocols and open blockchains.',
-		thumbnail: '/assets/img/Introduction_to_Bitcoin.jpg',
-		detailImage: '/assets/img/Introduction_to_Bitcoin.jpg',
+		thumbnail: '/assets/img/Introduction_to_Bitcoin.webp',
+		detailImage: '/assets/img/Introduction_to_Bitcoin.webp',
 		descriptionHtml: `
 			<p>Professional technical workshop led by Andreas M. Antonopoulos covering core cryptographic primitives, decentralized consensus models, transaction script validation, and network security dynamics in open blockchain protocols.</p>
 		`
@@ -115,8 +115,8 @@ export const projects: Project[] = [
 		title: 'Introduction to Cybersecurity',
 		category: 'certification',
 		summary: 'Cisco Networking Academy certification covering network defense and security foundations.',
-		thumbnail: '/assets/img/Introduction_to_cybersecurity.jpg',
-		detailImage: '/assets/img/Introduction_to_cybersecurity.jpg',
+		thumbnail: '/assets/img/Introduction_to_cybersecurity.webp',
+		detailImage: '/assets/img/Introduction_to_cybersecurity.webp',
 		descriptionHtml: `
 			<p>Certified by Cisco Networking Academy, covering core network security architecture, firewall defenses, encryption techniques, vulnerability mitigation, and security operational risk management.</p>
 		`

@@ -1,7 +1,6 @@
 <script lang="ts">
     import { onMount, onDestroy } from 'svelte';
 
-    // --- Karaoke Text State ---
     let karaokeProgress = $state(0);
     let karaokeContainer = $state<HTMLElement | undefined>(undefined);
 
@@ -18,7 +17,6 @@
         const rect = karaokeContainer.getBoundingClientRect();
         const windowHeight = window.innerHeight;
 
-        // Starts animating when 85% down the viewport, fully lit at 35%
         const start = windowHeight * 0.85;
         const end = windowHeight * 0.35;
 
@@ -28,14 +26,12 @@
     }
 
     onMount(() => {
-        // --- Original jQuery Logic ---
         const jQuery = (window as any).jQuery;
         const Typed = (window as any).Typed;
 
         if (jQuery) {
             "use strict";
 
-            // Navbar on scrolling
             jQuery(window).scroll(function (this: any) {
                 if (jQuery(this).scrollTop() > 200) {
                     jQuery('.navbar').fadeIn('slow').css('display', 'flex');
@@ -44,7 +40,6 @@
                 }
             });
 
-            // Smooth scrolling on the navbar links
             jQuery(".navbar-nav a").on('click', function (this: any, event: any) {
                 if (this.hash !== "") {
                     event.preventDefault();
@@ -64,7 +59,6 @@
                 }
             });
 
-            // Typed Initiate
             if (jQuery('.typed-text-output').length == 1 && Typed) {
                 const typed_strings = jQuery('.typed-text').text();
 
@@ -77,7 +71,6 @@
                 });
             }
 
-            // Modal Video
             let videoSrc: string = '';
 
             jQuery('.btn-play').click(function (this: any) {
@@ -97,7 +90,6 @@
                 jQuery("#video").attr('src', videoSrc);
             });
 
-            // Scroll to Bottom
             jQuery(window).scroll(function (this: any) {
                 if (jQuery(this).scrollTop() > 100) {
                     jQuery('.scroll-to-bottom').fadeOut('slow');
@@ -106,20 +98,6 @@
                 }
             });
 
-            // Skills
-            jQuery('.skill').waypoint(
-                function () {
-                    jQuery('.progress .progress-bar').each(function (this: any) {
-                        jQuery(this).css(
-                            "width",
-                            jQuery(this).attr("aria-valuenow") + '%'
-                        );
-                    });
-                },
-                { offset: '80%' }
-            );
-
-            // Portfolio isotope and filter
             const portfolioIsotope = jQuery('.portfolio-container').isotope({
                 itemSelector: '.portfolio-item',
                 layoutMode: 'fitRows'
@@ -134,7 +112,6 @@
                 });
             });
 
-            // Back to top button
             jQuery(window).scroll(function (this: any) {
                 if (jQuery(this).scrollTop() > 200) {
                     jQuery('.back-to-top').fadeIn('slow');
@@ -155,7 +132,6 @@
                 return false;
             });
 
-            // Testimonials carousel
             if (jQuery(".testimonial-carousel").length) {
                 jQuery(".testimonial-carousel").owlCarousel({
                     autoplay: true,
@@ -166,7 +142,6 @@
                 });
             }
 
-            // Ripples settings
             if (jQuery('#home').length) {
                 jQuery('#home').ripples({
                     resolution: 512,
@@ -176,7 +151,6 @@
             }
         }
 
-        // --- Custom Animation Observers & Listeners ---
         observer = new IntersectionObserver(
             (entries: IntersectionObserverEntry[]) => {
                 entries.forEach((entry: IntersectionObserverEntry) => {
@@ -209,10 +183,6 @@
 
         observer?.disconnect();
     });
-
-    // ============================================================
-    // CONTACT FORM VALIDATION
-    // ============================================================
 
     let name = $state('');
     let email = $state('');
@@ -307,7 +277,6 @@
     }
 </script>
 
-<!-- Navbar Start -->
 <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
     <a href="/" class="navbar-brand ml-lg-3">
         <h1 class="m-0 display-5">
@@ -346,10 +315,7 @@
         </a>
     </div>
 </nav>
-<!-- Navbar End -->
 
-
-<!-- Header Start -->
 <div
     class="container-fluid bg-primary d-flex align-items-center mb-5 py-5"
     id="home"
@@ -357,24 +323,20 @@
 >
     <div class="container">
         <div class="row align-items-center">
-
             <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
                 <div class="profile-circle d-flex justify-content-center">
-
                     <div class="hero-image-wrapper">
                         <img
                             id="profile-photo"
                             class="hero-profile-image"
-                            src="assets/img/profile.png"
+                            src="assets/img/profile.webp"
                             alt="Avatar"
                         />
                     </div>
-
                 </div>
             </div>
 
             <div class="col-lg-7 text-center text-lg-left">
-
                 <h3 class="text-white font-weight-normal mb-3">
                     I'm
                 </h3>
@@ -394,21 +356,15 @@
                 ></h1>
 
                 <div class="typed-text d-none">
-                    Software Developer, Cybersecurity Specialist, Web Developer
+                    Software Developer, Cybersecurity Specialist
                 </div>
-
             </div>
-
         </div>
     </div>
 </div>
-<!-- Header End -->
 
-
-<!-- About Start -->
 <div class="container-fluid py-5" id="about">
     <div class="container">
-
         <div class="position-relative d-flex align-items-center justify-content-center">
             <h1
                 class="display-1 text-uppercase text-white"
@@ -423,19 +379,17 @@
         </div>
 
         <div class="row align-items-center">
-
             <div class="col-lg-5 pb-4 pb-lg-0">
                 <img
                     class="img-fluid rounded w-100"
-                    src="assets/img/about.jpg"
+                    src="assets/img/about.webp"
                     alt="About Profile"
                 />
             </div>
 
             <div class="col-lg-7">
-
                 <h3 class="mb-4 text-center text-lg-left">
-                    Web Developer & Cybersecurity Specialist
+                    Software Developer & Cybersecurity Specialist
                 </h3>
 
                 <p
@@ -453,18 +407,13 @@
                         {' '}
                     {/each}
                 </p>
-
             </div>
         </div>
     </div>
 </div>
-<!-- About End -->
 
-
-<!-- Qualification Start -->
 <div class="container-fluid py-5" id="qualification">
     <div class="container">
-
         <div class="position-relative d-flex align-items-center justify-content-center">
             <h1
                 class="display-1 text-uppercase text-white"
@@ -479,15 +428,12 @@
         </div>
 
         <div class="row align-items-center">
-
             <div class="col-lg-8 offset-lg-2 text-left">
-
                 <h3 class="mb-4">
                     Academic Background
                 </h3>
 
                 <div class="border-left border-primary pt-2 pl-4 ml-2">
-
                     <div
                         class="position-relative mb-4 timeline-anim"
                         style="animation-delay: 100ms;"
@@ -539,19 +485,14 @@
                             development.
                         </p>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Qualification End -->
 
-
-<!-- Portfolio Start -->
 <div class="container-fluid pt-5 pb-3" id="portfolio">
     <div class="container">
-
         <div class="position-relative d-flex align-items-center justify-content-center">
             <h1
                 class="display-1 text-uppercase text-white"
@@ -567,7 +508,6 @@
 
         <div class="portfolio-scroll-container">
             <div class="portfolio-scroll">
-
                 <a
                     href="/personal-projects"
                     class="portfolio-item animate-on-scroll"
@@ -575,7 +515,7 @@
                 >
                     <img
                         class="img-fluid rounded"
-                        src="assets/img/personal-projects-thumbnail.jpg"
+                        src="assets/img/personal-projects-thumbnail.webp"
                         alt="Personal Projects"
                     />
                 </a>
@@ -587,7 +527,7 @@
                 >
                     <img
                         class="img-fluid rounded"
-                        src="assets/img/educational-projects-thumbnail.jpg"
+                        src="assets/img/educational-projects-thumbnail.webp"
                         alt="Educational Projects"
                     />
                 </a>
@@ -599,22 +539,17 @@
                 >
                     <img
                         class="img-fluid rounded"
-                        src="assets/img/certifications-thumbnail.jpg"
+                        src="assets/img/certifications-thumbnail.webp"
                         alt="Certifications"
                     />
                 </a>
-
             </div>
         </div>
     </div>
 </div>
-<!-- Portfolio End -->
 
-
-<!-- Skill Start -->
 <div class="container-fluid py-5" id="skill">
     <div class="container">
-
         <div class="position-relative d-flex align-items-center justify-content-center">
             <h1
                 class="display-1 text-uppercase text-white"
@@ -624,161 +559,136 @@
             </h1>
 
             <h1 class="position-absolute text-uppercase text-primary">
-                Core Competencies
+                Tech Stack
             </h1>
         </div>
 
-        <div class="row align-items-center">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div
+                    class="tech-stack-item animate-on-scroll"
+                    style="animation-delay: 100ms;"
+                >
+                    <div class="tech-stack-number">01</div>
 
-            <div class="col-md-6">
+                    <div class="tech-stack-content">
+                        <h5 class="font-weight-bold mb-2">
+                            Frontend
+                        </h5>
 
-                <div class="skill mb-4">
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-bold">
-                            Web Development
-                        </h6>
-
-                        <h6 class="font-weight-bold">
-                            95%
-                        </h6>
-                    </div>
-
-                    <div class="progress">
-                        <div
-                            class="progress-bar bg-primary"
-                            role="progressbar"
-                            aria-valuenow="95"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                        ></div>
+                        <p class="mb-0">
+                            HTML · CSS · JavaScript · TypeScript ·
+                            Svelte · Tailwind CSS
+                        </p>
                     </div>
                 </div>
-
-                <div class="skill mb-4">
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-bold">
-                            Cybersecurity
-                        </h6>
-
-                        <h6 class="font-weight-bold">
-                            90%
-                        </h6>
-                    </div>
-
-                    <div class="progress">
-                        <div
-                            class="progress-bar bg-warning"
-                            role="progressbar"
-                            aria-valuenow="90"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                        ></div>
-                    </div>
-                </div>
-
-                <div class="skill mb-4">
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-bold">
-                            System Architecture
-                        </h6>
-
-                        <h6 class="font-weight-bold">
-                            85%
-                        </h6>
-                    </div>
-
-                    <div class="progress">
-                        <div
-                            class="progress-bar bg-danger"
-                            role="progressbar"
-                            aria-valuenow="85"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                        ></div>
-                    </div>
-                </div>
-
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 mb-4">
+                <div
+                    class="tech-stack-item animate-on-scroll"
+                    style="animation-delay: 200ms;"
+                >
+                    <div class="tech-stack-number">02</div>
 
-                <div class="skill mb-4">
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-bold">
-                            Communication
-                        </h6>
+                    <div class="tech-stack-content">
+                        <h5 class="font-weight-bold mb-2">
+                            Web Engineering
+                        </h5>
 
-                        <h6 class="font-weight-bold">
-                            95%
-                        </h6>
-                    </div>
-
-                    <div class="progress">
-                        <div
-                            class="progress-bar bg-danger"
-                            role="progressbar"
-                            aria-valuenow="95"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                        ></div>
+                        <p class="mb-0">
+                            Responsive Design · Accessibility ·
+                            Performance · REST / JSON · Forms & Validation · SEO
+                        </p>
                     </div>
                 </div>
+            </div>
 
-                <div class="skill mb-4">
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-bold">
-                            Agile & Teamwork
-                        </h6>
+            <div class="col-md-6 mb-4">
+                <div
+                    class="tech-stack-item animate-on-scroll"
+                    style="animation-delay: 300ms;"
+                >
+                    <div class="tech-stack-number">03</div>
 
-                        <h6 class="font-weight-bold">
-                            85%
-                        </h6>
-                    </div>
+                    <div class="tech-stack-content">
+                        <h5 class="font-weight-bold mb-2">
+                            Development Workflow
+                        </h5>
 
-                    <div class="progress">
-                        <div
-                            class="progress-bar bg-dark"
-                            role="progressbar"
-                            aria-valuenow="85"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                        ></div>
+                        <p class="mb-0">
+                            Git · GitHub · npm · CI/CD ·
+                            GitHub Actions · Automated Workflows
+                        </p>
                     </div>
                 </div>
+            </div>
 
-                <div class="skill mb-4">
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-bold">
-                            Problem Solving
-                        </h6>
+            <div class="col-md-6 mb-4">
+                <div
+                    class="tech-stack-item animate-on-scroll"
+                    style="animation-delay: 400ms;"
+                >
+                    <div class="tech-stack-number">04</div>
 
-                        <h6 class="font-weight-bold">
-                            95%
-                        </h6>
-                    </div>
+                    <div class="tech-stack-content">
+                        <h5 class="font-weight-bold mb-2">
+                            Infrastructure
+                        </h5>
 
-                    <div class="progress">
-                        <div
-                            class="progress-bar bg-info"
-                            role="progressbar"
-                            aria-valuenow="95"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                        ></div>
+                        <p class="mb-0">
+                            DNS · Cloudflare · SSL/TLS · Hosting ·
+                            Virtual Machines · Basic Docker
+                        </p>
                     </div>
                 </div>
+            </div>
 
+            <div class="col-md-6 mb-4">
+                <div
+                    class="tech-stack-item animate-on-scroll"
+                    style="animation-delay: 500ms;"
+                >
+                    <div class="tech-stack-number">05</div>
+
+                    <div class="tech-stack-content">
+                        <h5 class="font-weight-bold mb-2">
+                            Security
+                        </h5>
+
+                        <p class="mb-0">
+                            Web Security Principles · Secure Development ·
+                            Cybersecurity
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div
+                    class="tech-stack-item animate-on-scroll"
+                    style="animation-delay: 600ms;"
+                >
+                    <div class="tech-stack-number">06</div>
+
+                    <div class="tech-stack-content">
+                        <h5 class="font-weight-bold mb-2">
+                            Development Approach
+                        </h5>
+
+                        <p class="mb-0">
+                            Problem Solving · Debugging ·
+                            Continuous Learning · AI-Assisted Development
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Skill End -->
 
-
-<!-- Services Start -->
 <div class="container-fluid pt-5" id="service">
     <div class="container">
-
         <div class="position-relative d-flex align-items-center justify-content-center">
             <h1
                 class="display-1 text-uppercase text-white"
@@ -793,7 +703,6 @@
         </div>
 
         <div class="row pb-3">
-
             <div
                 class="col-lg-4 col-md-6 text-center mb-5 animate-on-scroll"
                 style="animation-delay: 100ms;"
@@ -896,17 +805,12 @@
                     integrity checks, and effective disaster recovery plans.
                 </p>
             </div>
-
         </div>
     </div>
 </div>
-<!-- Services End -->
 
-
-<!-- Contact Start -->
 <div class="container-fluid py-5" id="contact">
     <div class="container">
-
         <div class="position-relative d-flex align-items-center justify-content-center">
             <h1
                 class="display-1 text-uppercase text-white"
@@ -922,9 +826,7 @@
 
         <div class="row justify-content-center">
             <div class="col-lg-8">
-
                 <div class="contact-form text-center">
-
                     <div id="success"></div>
 
                     <form
@@ -935,10 +837,7 @@
                         data-sveltekit-reload
                         onsubmit={validateForm}
                     >
-
                         <div class="form-row">
-
-                            <!-- Name -->
                             <div class="control-group col-sm-6">
                                 <input
                                     id="name"
@@ -966,7 +865,6 @@
                                 {/if}
                             </div>
 
-                            <!-- Email -->
                             <div class="control-group col-sm-6">
                                 <input
                                     id="email"
@@ -992,10 +890,8 @@
                                     </div>
                                 {/if}
                             </div>
-
                         </div>
 
-                        <!-- Subject -->
                         <div class="control-group mt-3">
                             <input
                                 id="subject"
@@ -1022,7 +918,6 @@
                             {/if}
                         </div>
 
-                        <!-- Message -->
                         <div class="control-group mt-3">
                             <textarea
                                 id="message"
@@ -1049,7 +944,6 @@
                             {/if}
                         </div>
 
-                        <!-- Submit -->
                         <div class="mt-3">
                             <button
                                 class="btn btn-outline-primary"
@@ -1058,21 +952,15 @@
                                 Send Message
                             </button>
                         </div>
-
                     </form>
-
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Contact End -->
 
-
-<!-- Scroll to Bottom -->
 <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
 
-<!-- Back to Top -->
 <a
     href="#home"
     class="btn btn-outline-dark px-0 back-to-top"
@@ -1080,7 +968,6 @@
 >
     <i class="fa fa-angle-double-up"></i>
 </a>
-
 
 <style>
     .hero-image-wrapper {
@@ -1105,6 +992,11 @@
         object-position: center;
         display: block;
         border: 5px solid #f8f9fa;
+    }
+
+    :global(.animate-on-scroll) {
+        opacity: 1;
+        transform: translateY(0);
     }
 
     :global(.animate-on-scroll.is-visible) {
@@ -1152,6 +1044,57 @@
             transform: translateX(0);
         }
     }
+
+    .tech-stack-item {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        padding: 25px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, padding-left 0.3s ease;
+    }
+
+    .tech-stack-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 0;
+        height: 2px;
+        background: #007bff;
+        transition: width 0.4s ease;
+    }
+
+    .tech-stack-item:hover {
+        transform: translateX(6px);
+    }
+
+    .tech-stack-item:hover::before {
+        width: 70px;
+    }
+
+    .tech-stack-number {
+        min-width: 50px;
+        margin-right: 20px;
+        font-size: 14px;
+        font-weight: 700;
+        color: #007bff;
+        letter-spacing: 1px;
+    }
+
+    .tech-stack-content h5 {
+        transition: color 0.3s ease;
+    }
+
+    .tech-stack-item:hover .tech-stack-content h5 {
+        color: #007bff;
+    }
+
+    .tech-stack-content p {
+        line-height: 1.8;
+        color: #6c757d;
+    }
+
     @media (max-width: 899px) {
         .hero-image-wrapper {
             position: relative;
@@ -1180,6 +1123,31 @@
         .form-row {
             gap: 20px;
         }
+    }
 
+    @media (max-width: 767.98px) {
+        .tech-stack-item {
+            padding: 20px 0;
+        }
+
+        .tech-stack-number {
+            min-width: 40px;
+            margin-right: 15px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        :global(.animate-on-scroll.is-visible),
+        :global(.timeline-anim.is-visible) {
+            animation: none;
+            opacity: 1;
+            transform: none;
+        }
+
+        .tech-stack-item,
+        .tech-stack-item::before,
+        .tech-stack-content h5 {
+            transition: none;
+        }
     }
 </style>

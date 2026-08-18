@@ -296,13 +296,13 @@
 
     <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
         <div class="navbar-nav m-auto py-0">
-            <a href="#home" class="nav-item nav-link active">Home</a>
-            <a href="#about" class="nav-item nav-link">About</a>
-            <a href="#qualification" class="nav-item nav-link">Education</a>
-            <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
-            <a href="#skill" class="nav-item nav-link">Skills</a>
-            <a href="#service" class="nav-item nav-link">Services</a>
-            <a href="#contact" class="nav-item nav-link">Contact</a>
+            <a href="#home" class="nav-item nav-link active" data-gtm-element="nav_link" data-gtm-label="Home">Home</a>
+            <a href="#about" class="nav-item nav-link" data-gtm-element="nav_link" data-gtm-label="About">About</a>
+            <a href="#qualification" class="nav-item nav-link" data-gtm-element="nav_link" data-gtm-label="Education">Education</a>
+            <a href="#portfolio" class="nav-item nav-link" data-gtm-element="nav_link" data-gtm-label="Portfolio">Portfolio</a>
+            <a href="#skill" class="nav-item nav-link" data-gtm-element="nav_link" data-gtm-label="Skills">Skills</a>
+            <a href="#service" class="nav-item nav-link" data-gtm-element="nav_link" data-gtm-label="Services">Services</a>
+            <a href="#contact" class="nav-item nav-link" data-gtm-element="nav_link" data-gtm-label="Contact">Contact</a>
         </div>
 
         <a
@@ -310,6 +310,7 @@
             class="btn btn-outline-primary d-none d-lg-block"
             style="display: block; max-width: 200px;"
             download="Valentin - CV.pdf"
+            data-gtm-element="download_cv"
         >
             Get CV
         </a>
@@ -512,6 +513,8 @@
                     href="/personal-projects"
                     class="portfolio-item animate-on-scroll"
                     style="animation-delay: 100ms;"
+                    data-gtm-element="portfolio_card"
+                    data-gtm-label="personal_projects"
                 >
                     <img
                         class="img-fluid rounded"
@@ -524,6 +527,8 @@
                     href="/educational-projects"
                     class="portfolio-item animate-on-scroll"
                     style="animation-delay: 250ms;"
+                    data-gtm-element="portfolio_card"
+                    data-gtm-label="educational_projects"
                 >
                     <img
                         class="img-fluid rounded"
@@ -536,6 +541,8 @@
                     href="/certifications"
                     class="portfolio-item animate-on-scroll"
                     style="animation-delay: 400ms;"
+                    data-gtm-element="portfolio_card"
+                    data-gtm-label="certifications"
                 >
                     <img
                         class="img-fluid rounded"
@@ -948,6 +955,7 @@
                             <button
                                 class="btn btn-outline-primary"
                                 type="submit"
+                                data-gtm-element="contact_form_submit"
                             >
                                 Send Message
                             </button>
@@ -965,6 +973,7 @@
     href="#home"
     class="btn btn-outline-dark px-0 back-to-top"
     aria-label="Back to top"
+    data-gtm-element="back_to_top"
 >
     <i class="fa fa-angle-double-up"></i>
 </a>

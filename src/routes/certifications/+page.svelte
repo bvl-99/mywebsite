@@ -6,6 +6,11 @@
 <svelte:head>
 	<title>Certifications | vBordea</title>
 	<meta name="description" content="Professional certifications in networking and cryptography." />
+	<meta property="og:title" content="Certifications | vBordea" />
+	<meta property="og:description" content="Professional certifications in networking and cryptography." />
+	<meta property="og:url" content="https://valentinbordea.com/certifications" />
+	<meta name="twitter:title" content="Certifications | vBordea" />
+	<meta name="twitter:description" content="Professional certifications in networking and cryptography." />
 </svelte:head>
 
 <style>

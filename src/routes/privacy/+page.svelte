@@ -2,8 +2,10 @@
     <title>Privacy Policy | vBordea</title>
     <meta name="description" content="How data is handled, stored, and protected on our website." />
     <meta property="og:title" content="Privacy Policy | vBordea" />
-    <meta property="og:description" content="Data handling and privacy practices for our website." />
-    <meta property="og:type" content="website" />
+    <meta property="og:description" content="How data is handled, stored, and protected on our website." />
+    <meta property="og:url" content="https://valentinbordea.com/privacy" />
+    <meta name="twitter:title" content="Privacy Policy | vBordea" />
+    <meta name="twitter:description" content="How data is handled, stored, and protected on our website." />
 </svelte:head>
 
 <style>

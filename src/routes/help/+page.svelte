@@ -2,8 +2,10 @@
     <title>Help & Support | vBordea</title>
     <meta name="description" content="Get in touch for technical help, code questions, or support." />
     <meta property="og:title" content="Help & Support | vBordea" />
-    <meta property="og:description" content="Technical support and inquiry guidelines." />
-    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Get in touch for technical help, code questions, or support." />
+    <meta property="og:url" content="https://valentinbordea.com/help" />
+    <meta name="twitter:title" content="Help & Support | vBordea" />
+    <meta name="twitter:description" content="Get in touch for technical help, code questions, or support." />
 </svelte:head>
 
 <style>

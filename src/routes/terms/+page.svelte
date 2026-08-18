@@ -2,8 +2,10 @@
     <title>Terms & Conditions | vBordea</title>
     <meta name="description" content="Terms and conditions governing the use of our website." />
     <meta property="og:title" content="Terms & Conditions | vBordea" />
-    <meta property="og:description" content="Service guidelines and terms for our website." />
-    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Terms and conditions governing the use of our website." />
+    <meta property="og:url" content="https://valentinbordea.com/terms" />
+    <meta name="twitter:title" content="Terms & Conditions | vBordea" />
+    <meta name="twitter:description" content="Terms and conditions governing the use of our website." />
 </svelte:head>
 
 <style>

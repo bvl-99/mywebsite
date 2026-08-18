@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import type { PageData } from './$types';
 	let { data }: { data: PageData } = $props();
 	const project = $derived(data.project);
@@ -7,6 +8,16 @@
 <svelte:head>
 	<title>{project.title} | vBordea</title>
 	<meta name="description" content={project.summary} />
+
+	<!-- Dynamic Social Sharing Tags -->
+	<meta property="og:title" content="{project.title} | vBordea" />
+	<meta property="og:description" content={project.summary} />
+	<meta property="og:url" content="https://valentinbordea.com{page.url.pathname}" />
+	<meta property="og:image" content={project.detailImage || 'https://valentinbordea.com/assets/img/seo-social-banner.webp'} />
+
+	<meta name="twitter:title" content="{project.title} | vBordea" />
+	<meta name="twitter:description" content={project.summary} />
+	<meta name="twitter:image" content={project.detailImage || 'https://valentinbordea.com/assets/img/seo-social-banner.webp'} />
 </svelte:head>
 
 <style>

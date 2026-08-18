@@ -6,6 +6,11 @@
 <svelte:head>
 	<title>Educational Projects | vBordea</title>
 	<meta name="description" content="Bachelor and Master academic thesis projects by vBordea." />
+	<meta property="og:title" content="Educational Projects | vBordea" />
+	<meta property="og:description" content="Bachelor and Master academic thesis projects by vBordea." />
+	<meta property="og:url" content="https://valentinbordea.com/educational-projects" />
+	<meta name="twitter:title" content="Educational Projects | vBordea" />
+	<meta name="twitter:description" content="Bachelor and Master academic thesis projects by vBordea." />
 </svelte:head>
 
 <style>

@@ -2,8 +2,10 @@
     <title>FAQs | vBordea</title>
     <meta name="description" content="Quick answers regarding development, security audits, and work inquiries with Valentin." />
     <meta property="og:title" content="FAQs | vBordea" />
-    <meta property="og:description" content="Frequently asked questions about engineering and services." />
-    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Quick answers regarding development, security audits, and work inquiries with Valentin." />
+    <meta property="og:url" content="https://valentinbordea.com/faqs" />
+    <meta name="twitter:title" content="FAQs | vBordea" />
+    <meta name="twitter:description" content="Quick answers regarding development, security audits, and work inquiries with Valentin." />
 </svelte:head>
 
 <style>

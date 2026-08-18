@@ -6,6 +6,11 @@
 <svelte:head>
 	<title>Personal Projects | vBordea</title>
 	<meta name="description" content="Personal software engineering and security projects by Valentin." />
+	<meta property="og:title" content="Personal Projects | vBordea" />
+	<meta property="og:description" content="Personal software engineering and security projects by Valentin." />
+	<meta property="og:url" content="https://valentinbordea.com/personal-projects" />
+	<meta name="twitter:title" content="Personal Projects | vBordea" />
+	<meta name="twitter:description" content="Personal software engineering and security projects by Valentin." />
 </svelte:head>
 
 <style>

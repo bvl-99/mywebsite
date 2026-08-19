@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Category Pages -->
   <url>
     <loc>https://valentinbordea.com/</loc>
     <changefreq>monthly</changefreq>
@@ -19,5 +20,63 @@
     <loc>https://valentinbordea.com/certifications</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Static & Support Pages -->
+  <url>
+    <loc>https://valentinbordea.com/faqs</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://valentinbordea.com/help</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://valentinbordea.com/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://valentinbordea.com/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Personal Projects -->
+  <url>
+    <loc>https://valentinbordea.com/personal-projects/TikTokGame</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://valentinbordea.com/personal-projects/RFIDsecurity</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Educational Projects -->
+  <url>
+    <loc>https://valentinbordea.com/educational-projects/learn_and_play_for_kids</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://valentinbordea.com/educational-projects/image_reconstruction</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Certifications -->
+  <url>
+    <loc>https://valentinbordea.com/certifications/bitcoin</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://valentinbordea.com/certifications/cybersecurity</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

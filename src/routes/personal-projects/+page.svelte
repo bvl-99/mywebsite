@@ -141,6 +141,24 @@
 			font-size: 0.9rem;
 			line-height: 1.5;
 		}
+
+		.back-btn {
+			margin-top: 30px;
+			font-size: 0.95rem;
+			line-height: 1.4;
+		}
+	}
+
+	.back-btn {
+		display: inline-flex;
+		align-items: center;
+		margin-top: 36px;
+		font-weight: 600;
+		color: #007bff;
+		text-decoration: none;
+	}
+	.back-btn:hover {
+		text-decoration: underline;
 	}
 </style>
 
@@ -161,4 +179,6 @@
 			</a>
 		{/each}
 	</div>
+
+	<a href="/" class="back-btn">← Back to Homepage</a>
 </div>

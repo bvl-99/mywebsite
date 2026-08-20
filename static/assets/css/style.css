@@ -10657,6 +10657,25 @@ img#profile-photo.img-fluid {
 	height: 100% !important;
 }
 
+@media (min-width: 766px) and (max-width: 992px) {
+    .profile-circle {
+		max-width: 220px !important;
+		width: clamp(120px, 56vw, 220px) !important;
+	}
+    .profile-circle img#profile-photo,
+    #profile-photo {
+    	width: 100% !important;
+    	height: 100% !important;
+    	object-fit: cover !important; /* crop to fill without distortion */
+    	display: block !important;
+    	border-radius: 0 !important; /* wrapper handles rounding */
+    	max-width: none !important; /* override img-fluid w-100 */
+    	-webkit-backface-visibility: hidden;
+    	backface-visibility: hidden;
+    	transform: scale(2) !important;
+    }
+}
+
 /* fine-tune sizing on small screens */
 @media (max-width: 768px) {
 	.profile-circle {

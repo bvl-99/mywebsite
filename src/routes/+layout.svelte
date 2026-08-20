@@ -34,8 +34,26 @@
         <Header />
     {/if}
 
-    <!-- Svelte 5 equivalent of <slot /> -->
-    {@render children()}
+    <!-- Wrapping children in flex-grow-1 forces it to push the footer down -->
+    <main class="flex-grow-1">
+        {@render children()}
+    </main>
 
     <Footer />
 </div>
+
+<style>
+    /*
+      This globally targets ANY .fixed-top navbar/header across all pages
+      and forces it to center and lock at 1920px on ultrawide monitors.
+    */
+    @media (min-width: 1920px) {
+        :global(.fixed-top) {
+            width: 100% !important;
+            max-width: 1920px !important;
+            left: 50% !important;
+            right: auto !important;
+            transform: translateX(-50%) !important;
+        }
+    }
+</style>

@@ -5,7 +5,7 @@
     let karaokeContainer = $state<HTMLElement | undefined>(undefined);
 
     const aboutText =
-        "I specialize in building secure, scalable software and robust web applications. With a strong foundation in computer science and network security, I focus on bridging the gap between clean, efficient code and resilient digital infrastructure, delivering solutions that are both highly performant and highly secure.";
+            "I'm a software developer with a background in computer science and cybersecurity. I enjoy building web applications that are not just fast and user-friendly, but secure under the hood. For me, good software is about finding the right balance between clean code and a safe, reliable infrastructure.";
 
     const words = aboutText.split(' ');
 
@@ -56,6 +56,11 @@
                         jQuery('.navbar-nav .active').removeClass('active');
                         jQuery(this).closest('a').addClass('active');
                     }
+                }
+                // Close mobile hamburger menu automatically
+                const navbarCollapse = jQuery('#navbarCollapse');
+                if (navbarCollapse.hasClass('show')) {
+                    navbarCollapse.collapse('hide');
                 }
             });
 
@@ -277,6 +282,13 @@
     }
 </script>
 
+<svelte:head>
+    <title>Home | vBordea</title>
+    <meta name="description" content="Portfolio of Liviu-Valentin Bordea, Software Developer & Cybersecurity Specialist." />
+    <meta property="og:title" content="Liviu-Valentin Bordea | Software Developer" />
+    <meta property="og:url" content="https://valentinbordea.com/" />
+</svelte:head>
+
 <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
     <a href="/" class="navbar-brand ml-lg-3">
         <h1 class="m-0 display-5">
@@ -332,6 +344,7 @@
                             class="hero-profile-image"
                             src="assets/img/profile.webp"
                             alt="Avatar"
+                            draggable="false"
                         />
                     </div>
                 </div>
@@ -455,9 +468,9 @@
                         </p>
 
                         <p>
-                            Focused on network security, threat detection,
-                            risk management, and the architectural development
-                            of highly secure applications.
+                            Focused on cryptography, information security, security architectures and protocols,
+                            cyberattack detection and mitigation, secure software development, malware analysis,
+                            and cybersecurity risk management.
                         </p>
                     </div>
 
@@ -481,9 +494,9 @@
                         </p>
 
                         <p>
-                            Core foundation in algorithmic problem solving,
-                            system architecture, and full-stack software
-                            development.
+                            Studied algorithms, data structures, programming, databases, operating systems,
+                            computer networks, software engineering, and computer architecture, alongside
+                            mathematical and theoretical foundations of computing.
                         </p>
                     </div>
                 </div>
@@ -845,7 +858,8 @@
                         onsubmit={validateForm}
                     >
                         <div class="form-row">
-                            <div class="control-group col-sm-6">
+                            <!-- ADDED spacing classes for mobile to separate the fields -->
+                            <div class="control-group col-sm-6 mb-3 mb-sm-0">
                                 <input
                                     id="name"
                                     type="text"
@@ -979,80 +993,30 @@
 </a>
 
 <style>
-    .hero-image-wrapper {
-        position: relative;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        border: 5px solid #f8f9fa;
-        background: #f8f9fa;
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-        transform: translateY(40%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+    /* =========================================
+       1. COMPONENT BASE STYLES
+       ========================================= */
+       .hero-image-wrapper {
+               width: 260px;
+               height: 260px;
+               border-radius: 50%;
+               background-color: #f8f9fa;
+               box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+               margin: 0 auto;
+               /* This padding forces the image inward, creating a perfect, flawless white frame */
+               padding: 12px;
+               transform: scale(0.80) translateY(25%);
+           }
 
-    #profile-photo {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        object-fit: contain;
-        object-position: center;
-        display: block;
-        border: 5px solid #f8f9fa;
-    }
-
-    :global(.animate-on-scroll) {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    :global(.animate-on-scroll.is-visible) {
-        animation: whimsicalBounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    }
-
-    @keyframes whimsicalBounce {
-        0% {
-            opacity: 0;
-            transform: translateY(40px) scale(0.9);
-        }
-
-        50% {
-            opacity: 1;
-            transform: translateY(-10px) scale(1.02);
-        }
-
-        75% {
-            transform: translateY(5px) scale(0.98);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-    }
-
-    .timeline-anim {
-        opacity: 0;
-        transform: translateX(-40px);
-    }
-
-    :global(.timeline-anim.is-visible) {
-        animation: timelineSlide 0.8s ease-out forwards;
-    }
-
-    @keyframes timelineSlide {
-        0% {
-            opacity: 0;
-            transform: translateX(-40px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
+           #profile-photo {
+               width: 100%;
+               height: 100%;
+               border-radius: 50%;
+               /* 'cover' fills the inner padded area perfectly without distorting */
+               object-fit: cover;
+               object-position: center;
+               display: block;
+           }
 
     .tech-stack-item {
         position: relative;
@@ -1104,37 +1068,20 @@
         color: #6c757d;
     }
 
-    @media (max-width: 899px) {
+    /* =========================================
+       2. COMPONENT MEDIA QUERIES (MOBILE)
+       ========================================= */
+    @media (max-width: 991px) {
         .hero-image-wrapper {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            max-width: 30vw;
-            max-height: 30vw;
-            border-radius: 50%;
-            border: 5px solid #f8f9fa;
-            background: #f8f9fa;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-            margin: 0 auto;
-            overflow: visible;
-        }
-
-        #profile-photo {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
+            width: 220px;
+            height: 220px;
+            aspect-ratio: 1/1;
+            margin: 0;
             object-position: center;
-            display: block;
-            border: none;
+            transform: translateY(0%) scale(0.65);
+
         }
 
-        .form-row {
-            gap: 20px;
-        }
-    }
-
-    @media (max-width: 767.98px) {
         .tech-stack-item {
             padding: 20px 0;
         }
@@ -1142,21 +1089,6 @@
         .tech-stack-number {
             min-width: 40px;
             margin-right: 15px;
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        :global(.animate-on-scroll.is-visible),
-        :global(.timeline-anim.is-visible) {
-            animation: none;
-            opacity: 1;
-            transform: none;
-        }
-
-        .tech-stack-item,
-        .tech-stack-item::before,
-        .tech-stack-content h5 {
-            transition: none;
         }
     }
 </style>

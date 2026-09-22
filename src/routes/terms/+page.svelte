@@ -9,7 +9,6 @@
 </svelte:head>
 
 <style>
-    :global(body), :global(html) { height: 100%; display: flex; flex-direction: column; }
     .main-content { flex-grow: 1; padding-top: 80px; max-width: 800px; }
     .card-header button { width: 100%; text-align: left; font-weight: 600; color: #1A1A1A; text-decoration: none; }
     .card-header button:focus { box-shadow: none; }

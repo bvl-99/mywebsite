@@ -329,11 +329,8 @@
     </div>
 </nav>
 
-<div
-    class="container-fluid bg-primary d-flex align-items-center mb-5 py-5"
-    id="home"
-    style="min-height: 100vh;"
->
+<div class="container-fluid d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh; background-color: #1A1A1A !important; overflow: hidden;">
+
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
@@ -1091,4 +1088,7 @@
             margin-right: 15px;
         }
     }
+
+    :global(#home canvas) { width: 101% !important; }
+
 </style>

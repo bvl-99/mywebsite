@@ -18,7 +18,7 @@
 		</ul>
 
 		<p class="footer__copy">
-			&copy; {year} <a href="/">valentinbordea.com</a>. All rights reserved.
+			&copy; Copyright {year}. <a href="/">valentinbordea.com</a>.<br />All Rights Reserved.
 		</p>
 	</div>
 </footer>
@@ -43,6 +43,10 @@
 		padding: 0;
 		list-style: none;
 	}
+	.footer__legal a,
+	.footer__copy a {
+		text-decoration: none;
+	}
 	.footer__legal a {
 		display: inline-block;
 		padding: 0.4rem 0;
@@ -58,6 +62,7 @@
 		color: rgb(255 255 255 / 75%);
 	}
 	.footer__copy a {
-		color: inherit;
+		color: #fff;
+		font-weight: 700;
 	}
 </style>

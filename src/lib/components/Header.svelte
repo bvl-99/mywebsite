@@ -1,8 +1,14 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
+	import { page } from '$app/state';
 	import { nav, site } from '$lib/site';
 
 	let open = $state(false);
+	let scrollY = $state(0);
+
+	// On the home page the header stays hidden until the visitor starts scrolling.
+	const overlay = $derived(page.url.pathname === '/');
+	const atTop = $derived(overlay && scrollY < 24);
 
 	afterNavigate(() => {
 		open = false;
@@ -15,9 +21,9 @@
 	}
 </script>
 
-<svelte:window onkeydown={onKeydown} />
+<svelte:window onkeydown={onKeydown} bind:scrollY />
 
-<header class="site-header">
+<header class="site-header" class:overlay class:at-top={atTop}>
 	<div class="container bar">
 		<a class="brand" href="/" aria-label="{site.shortName} — home">
 			<span class="brand__v">v</span>Bordea
@@ -61,6 +67,19 @@
 		background: rgb(255 255 255 / 94%);
 		backdrop-filter: blur(8px);
 		border-bottom: 1px solid var(--line);
+	}
+	.site-header.overlay {
+		position: fixed;
+		inset: 0 0 auto 0;
+		transition: transform 0.3s ease;
+	}
+	:global(.js) .site-header.at-top:not(:focus-within) {
+		transform: translateY(-100%);
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.site-header.overlay {
+			transition: none;
+		}
 	}
 	.bar {
 		display: flex;

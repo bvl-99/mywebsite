@@ -42,7 +42,8 @@
 		overflow: hidden;
 		display: flex;
 		align-items: center;
-		min-height: min(80vh, 46rem);
+		min-height: 100vh;
+		min-height: 100svh;
 		padding-block: var(--space-8);
 		color: #fff;
 		background:

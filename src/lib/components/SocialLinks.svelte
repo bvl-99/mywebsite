@@ -13,6 +13,7 @@
 				rel="me noopener"
 				aria-label={social.label}
 				title={social.label}
+				data-network={social.label}
 				data-umami-event="social-click"
 				data-umami-event-network={social.label}
 			>
@@ -47,14 +48,25 @@
 		border-radius: 50%;
 		background: #fff;
 		color: var(--ink);
-		transition:
-			transform 0.25s ease,
-			box-shadow 0.25s ease,
-			color 0.25s ease;
+		text-decoration: none;
+		transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 	}
-	.social__link:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 6px 14px rgb(0 0 0 / 35%);
-		color: var(--accent);
+	.social__link:hover,
+	.social__link:focus-visible {
+		transform: translateY(-4px) scale(1.05);
+		box-shadow: 0 6px 12px rgb(0 0 0 / 35%);
+	}
+	/* Brand colours on hover */
+	.social__link[data-network='X']:hover {
+		color: #000;
+	}
+	.social__link[data-network='Facebook']:hover {
+		color: #1877f2;
+	}
+	.social__link[data-network='LinkedIn']:hover {
+		color: #0a66c2;
+	}
+	.social__link[data-network='Instagram']:hover {
+		color: #e4405f;
 	}
 </style>

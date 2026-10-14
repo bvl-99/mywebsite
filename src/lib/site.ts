@@ -18,10 +18,10 @@ export const site = {
 		scriptUrl: 'https://cloud.umami.is/script.js'
 	},
 	socials: [
-		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/bordeavalentin' },
 		{ label: 'X', href: 'https://x.com/bordea_valentin' },
-		{ label: 'Instagram', href: 'https://www.instagram.com/valentinbordea/' },
-		{ label: 'Facebook', href: 'https://www.facebook.com/liviu.valentinbordea' }
+		{ label: 'Facebook', href: 'https://www.facebook.com/liviu.valentinbordea' },
+		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/bordeavalentin' },
+		{ label: 'Instagram', href: 'https://www.instagram.com/valentinbordea/' }
 	]
 } as const;
 

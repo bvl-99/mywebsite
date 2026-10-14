@@ -5,6 +5,8 @@
 	type Field = 'name' | 'email' | 'subject' | 'message';
 	type Status = 'idle' | 'submitting' | 'success' | 'error';
 
+	const MESSAGE_MAX = 750;
+
 	const fields: Field[] = ['name', 'email', 'subject', 'message'];
 
 	let values = $state<Record<Field, string>>({ name: '', email: '', subject: '', message: '' });
@@ -32,6 +34,7 @@
 		message: (v) => {
 			if (!v) return 'Please enter a message.';
 			if (v.length < 10) return 'Your message must contain at least 10 characters.';
+			if (v.length > MESSAGE_MAX) return `Your message is too long (max ${MESSAGE_MAX} characters).`;
 			return '';
 		}
 	};
@@ -102,9 +105,10 @@
 
 		<div class="row">
 			<div class="field">
-				<label for="contact-name">Name</label>
+				<label class="visually-hidden" for="contact-name">Name</label>
 				<input
 					id="contact-name"
+					placeholder="e.g., Jane Doe"
 					name="name"
 					type="text"
 					autocomplete="name"
@@ -118,9 +122,10 @@
 			</div>
 
 			<div class="field">
-				<label for="contact-email">Email</label>
+				<label class="visually-hidden" for="contact-email">Email</label>
 				<input
 					id="contact-email"
+					placeholder="e.g., jane.doe@example.com"
 					name="email"
 					type="email"
 					autocomplete="email"
@@ -135,9 +140,10 @@
 		</div>
 
 		<div class="field">
-			<label for="contact-subject">Subject</label>
+			<label class="visually-hidden" for="contact-subject">Subject</label>
 			<input
 				id="contact-subject"
+				placeholder="e.g., Freelance Project Inquiry"
 				name="subject"
 				type="text"
 				required
@@ -150,16 +156,22 @@
 		</div>
 
 		<div class="field">
-			<label for="contact-message">Message</label>
+			<label class="visually-hidden" for="contact-message">Message</label>
 			<textarea
 				id="contact-message"
+				placeholder="Tell me briefly about your project or inquiry..."
 				name="message"
 				rows="6"
+				maxlength={MESSAGE_MAX}
 				required
 				bind:value={values.message}
 				onblur={() => validate('message')}
 				aria-invalid={errors.message ? 'true' : undefined}
-				aria-describedby={errors.message ? 'contact-message-error' : undefined}></textarea>
+				aria-describedby={errors.message ? 'contact-message-error contact-message-hint' : 'contact-message-hint'}></textarea>
+			<p class="hint" id="contact-message-hint">
+				Max {MESSAGE_MAX} characters <span aria-hidden="true">·</span>
+				<span class:over={values.message.length >= MESSAGE_MAX}>{values.message.length} / {MESSAGE_MAX}</span>
+			</p>
 			{#if errors.message}<p class="error" id="contact-message-error">{errors.message}</p>{/if}
 		</div>
 
@@ -171,7 +183,7 @@
 		{/if}
 
 		<button class="btn" type="submit" disabled={status === 'submitting'}>
-			{status === 'submitting' ? 'Sending…' : 'Send message'}
+			{status === 'submitting' ? 'Sending…' : 'Send Message'}
 		</button>
 		<p class="alt">
 			Prefer email? Write to <a href="mailto:{site.email}">{site.email}</a>.
@@ -210,15 +222,26 @@
 		color: var(--ink);
 		background: var(--bg);
 		border: 1.5px solid var(--line-strong);
-		border-radius: var(--radius-sm);
+		border-radius: 999px;
 	}
 	textarea {
-		resize: vertical;
+		border-radius: 1.75rem;
+		resize: none;
 		min-height: 9rem;
 	}
 	input[aria-invalid='true'],
 	textarea[aria-invalid='true'] {
 		border-color: var(--danger);
+	}
+	.hint {
+		margin: 0;
+		color: var(--muted);
+		font-size: var(--text-sm);
+		text-align: right;
+	}
+	.hint .over {
+		color: var(--danger);
+		font-weight: 600;
 	}
 	.error {
 		margin: 0;
@@ -234,12 +257,23 @@
 		overflow: hidden;
 	}
 	.alt {
+		text-align: center;
 		margin: 0;
 		color: var(--muted);
 		font-size: var(--text-sm);
 	}
 	form .btn {
-		justify-self: start;
+		justify-self: center;
+		background: transparent;
+		color: var(--ink);
+	}
+	form .btn:hover:not(:disabled) {
+		background: var(--ink);
+		color: #fff;
+	}
+	input::placeholder,
+	textarea::placeholder {
+		color: var(--muted);
 	}
 	.notice {
 		padding: var(--space-5);

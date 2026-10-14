@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { tick } from 'svelte';
+	import { goto } from '$app/navigation';
 	import { site } from '$lib/site';
 
 	type Field = 'name' | 'email' | 'subject' | 'message';
@@ -71,6 +72,7 @@
 				values = { name: '', email: '', subject: '', message: '' };
 				await tick();
 				successPanel?.focus();
+				await goto('/thank-you');
 			} else {
 				status = 'error';
 			}

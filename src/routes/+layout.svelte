@@ -1,59 +1,48 @@
 <script lang="ts">
-    import { afterNavigate } from '$app/navigation';
-    import { page } from '$app/state';
-    import Header from '$lib/components/Header.svelte';
-    import Footer from '$lib/components/Footer.svelte';
-    import '../app.css';
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	import '$lib/styles/fonts.css';
+	import '$lib/styles/tokens.css';
+	import '$lib/styles/base.css';
 
-    // Extract the children snippet from Svelte 5 props
-    let { children } = $props();
+	import { site } from '$lib/site';
 
-    // Set your production domain here
-    const siteUrl = 'https://valentinbordea.com';
-
-    // Dynamically derive the canonical URL for the current page
-    let canonicalUrl = $derived(`${siteUrl}${page.url.pathname}`);
-
-    afterNavigate(() => {
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'instant'
-        });
-    });
+	let { children } = $props();
 </script>
 
 <svelte:head>
-    <!-- Tells Google this is the definitive URL for this page -->
-    <link rel="canonical" href={canonicalUrl} />
+	{#if site.analytics.websiteId}
+		<!-- Cookieless analytics; only loads on the production domain and respects Do Not Track. -->
+		<script
+			defer
+			src={site.analytics.scriptUrl}
+			data-website-id={site.analytics.websiteId}
+			data-domains="valentinbordea.com"
+			data-do-not-track="true"
+		></script>
+	{/if}
 </svelte:head>
 
-<div class="app-container d-flex flex-column min-vh-100">
+<a class="skip-link" href="#main">Skip to main content</a>
 
-    {#if page.url.pathname !== '/'}
-        <Header />
-    {/if}
-
-    <!-- Wrapping children in flex-grow-1 forces it to push the footer down -->
-    <main class="flex-grow-1">
-        {@render children()}
-    </main>
-
-    <Footer />
+<div class="app">
+	<Header />
+	<main id="main" tabindex="-1">
+		{@render children()}
+	</main>
+	<Footer />
 </div>
 
 <style>
-    /*
-      This globally targets ANY .fixed-top navbar/header across all pages
-      and forces it to center and lock at 1920px on ultrawide monitors.
-    */
-    @media (min-width: 1920px) {
-        :global(.fixed-top) {
-            width: 100% !important;
-            max-width: 1920px !important;
-            left: 50% !important;
-            right: auto !important;
-            transform: translateX(-50%) !important;
-        }
-    }
+	.app {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+	main {
+		flex: 1 0 auto;
+	}
+	main:focus {
+		outline: none;
+	}
 </style>

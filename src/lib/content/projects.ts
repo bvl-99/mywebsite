@@ -74,7 +74,7 @@ export const projects: Project[] = [
 		category: 'personal',
 		featured: true,
 		summary: 'Real-time API-driven live trivia experience built with Python and TikTok Live API.',
-		thumbnail: '/assets/img/triviaquizloading.webp',
+		thumbnail: '/assets/img/thumb-TikTokGame.webp',
 		detailImage: '/assets/img/triviaquizloading.webp',
 		tags: ['Python', 'TikTok Live API', 'Real-time', 'Sockets'],
 		descriptionHtml: `
@@ -104,7 +104,7 @@ export const projects: Project[] = [
 		featured: true,
 		summary:
 			'Security research investigating 13.56 MHz RFID emulation on Android NFC architectures.',
-		thumbnail: '/assets/img/rfid125khz.webp',
+		thumbnail: '/assets/img/thumb-RFIDsecurity.webp',
 		detailImage: '/assets/img/rfid125khz.webp',
 		tags: ['Android NFC', 'Host Card Emulation', 'ISO/IEC 14443', 'MIFARE'],
 		descriptionHtml: `
@@ -126,7 +126,7 @@ export const projects: Project[] = [
 		category: 'educational',
 		summary:
 			'Bachelor Thesis: Gamified, interactive Android learning system engineered in Java for early childhood education.',
-		thumbnail: '/assets/img/learn_and_play_for_kids.webp',
+		thumbnail: '/assets/img/thumb-learn_and_play_for_kids.webp',
 		detailImage: '/assets/img/learn_and_play_for_kids.webp',
 		tags: ['Java', 'Android Studio', 'RecyclerView', 'Lottie'],
 		descriptionHtml: `
@@ -148,7 +148,7 @@ export const projects: Project[] = [
 		category: 'educational',
 		summary:
 			'Master Thesis: Comparative analysis of GANs, Diffusion Models, VAEs, and Transformers for digital forensics.',
-		thumbnail: '/assets/img/image_reconstruction.webp',
+		thumbnail: '/assets/img/thumb-image_reconstruction.webp',
 		detailImage: '/assets/img/image_reconstruction.webp',
 		tags: ['PyTorch', 'CUDA', 'GANs', 'Diffusion models', 'Digital forensics'],
 		descriptionHtml: `
@@ -173,7 +173,7 @@ export const projects: Project[] = [
 		category: 'certification',
 		summary:
 			'Professional workshop certification on Bitcoin consensus protocols and open blockchains.',
-		thumbnail: '/assets/img/Introduction_to_Bitcoin.webp',
+		thumbnail: '/assets/img/thumb-bitcoin.webp',
 		detailImage: '/assets/img/Introduction_to_Bitcoin.webp',
 		tags: ['Bitcoin', 'Blockchain', 'Cryptography'],
 		descriptionHtml: `
@@ -186,7 +186,7 @@ export const projects: Project[] = [
 		category: 'certification',
 		summary:
 			'Cisco Networking Academy certification covering network defense and security foundations.',
-		thumbnail: '/assets/img/Introduction_to_cybersecurity.webp',
+		thumbnail: '/assets/img/thumb-cybersecurity.webp',
 		detailImage: '/assets/img/Introduction_to_cybersecurity.webp',
 		tags: ['Cisco Networking Academy', 'Network security'],
 		descriptionHtml: `

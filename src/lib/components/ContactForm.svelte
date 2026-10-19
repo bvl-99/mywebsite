@@ -35,7 +35,8 @@
 		message: (v) => {
 			if (!v) return 'Please enter a message.';
 			if (v.length < 10) return 'Your message must contain at least 10 characters.';
-			if (v.length > MESSAGE_MAX) return `Your message is too long (max ${MESSAGE_MAX} characters).`;
+			if (v.length > MESSAGE_MAX)
+				return `Your message is too long (max ${MESSAGE_MAX} characters).`;
 			return '';
 		}
 	};
@@ -169,10 +170,14 @@
 				bind:value={values.message}
 				onblur={() => validate('message')}
 				aria-invalid={errors.message ? 'true' : undefined}
-				aria-describedby={errors.message ? 'contact-message-error contact-message-hint' : 'contact-message-hint'}></textarea>
+				aria-describedby={errors.message
+					? 'contact-message-error contact-message-hint'
+					: 'contact-message-hint'}></textarea>
 			<p class="hint" id="contact-message-hint">
 				Max {MESSAGE_MAX} characters <span aria-hidden="true">·</span>
-				<span class:over={values.message.length >= MESSAGE_MAX}>{values.message.length} / {MESSAGE_MAX}</span>
+				<span class:over={values.message.length >= MESSAGE_MAX}
+					>{values.message.length} / {MESSAGE_MAX}</span
+				>
 			</p>
 			{#if errors.message}<p class="error" id="contact-message-error">{errors.message}</p>{/if}
 		</div>

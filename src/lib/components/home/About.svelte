@@ -1,6 +1,7 @@
 <script lang="ts">
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import KaraokeText from '$lib/components/KaraokeText.svelte';
+	import { site } from '$lib/site';
 
 	const aboutText =
 		"I'm a software developer with a background in computer science and cybersecurity. I enjoy building web applications that are not just fast and user-friendly, but secure under the hood. For me, good software is about finding the right balance between clean code and a safe, reliable infrastructure.";
@@ -20,7 +21,7 @@
 				decoding="async"
 			/>
 			<div>
-				<h3>Software Developer &amp; Cybersecurity Specialist</h3>
+				<h3>{site.name}</h3>
 				<KaraokeText text={aboutText} />
 			</div>
 		</div>

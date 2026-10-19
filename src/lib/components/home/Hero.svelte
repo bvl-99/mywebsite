@@ -29,8 +29,12 @@
 				background in computer science and cybersecurity.
 			</p>
 			<div class="hero__actions">
-				<a class="btn btn--accent" href="#contact" data-umami-event="hero-get-in-touch">Get in touch</a>
-				<a class="btn btn--ghost" href="#portfolio" data-umami-event="hero-view-work">View my work</a>
+				<a class="btn btn--accent" href="#contact" data-umami-event="hero-get-in-touch"
+					>Get in touch</a
+				>
+				<a class="btn btn--ghost" href="#portfolio" data-umami-event="hero-view-work"
+					>View my work</a
+				>
 			</div>
 		</div>
 	</div>

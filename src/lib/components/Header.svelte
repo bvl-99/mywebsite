@@ -25,8 +25,8 @@
 
 <header class="site-header" class:overlay class:at-top={atTop}>
 	<div class="container bar">
-		<a class="brand" href="/" aria-label="{site.shortName} — home">
-			<span class="brand__v">v</span>Bordea
+		<a class="brand" href="/" aria-label="{site.name} — home">
+			<img src="/favicon.svg" alt="" width="42" height="42" />
 		</a>
 
 		<button
@@ -42,7 +42,15 @@
 
 		<!-- Clicking any link inside the menu closes it (hash links on the same page do not always trigger navigation). -->
 		<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
-		<nav id="site-nav" class="nav" class:open aria-label="Main" onclick={(e) => { if ((e.target as HTMLElement).closest('a')) open = false; }}>
+		<nav
+			id="site-nav"
+			class="nav"
+			class:open
+			aria-label="Main"
+			onclick={(e) => {
+				if ((e.target as HTMLElement).closest('a')) open = false;
+			}}
+		>
 			<ul>
 				{#each nav as item (item.href)}
 					<li><a href={item.href}>{item.label}</a></li>
@@ -93,14 +101,13 @@
 		flex-wrap: wrap;
 	}
 	.brand {
-		font-size: 1.6rem;
-		font-weight: 800;
-		letter-spacing: -0.02em;
-		color: var(--ink);
-		text-decoration: none;
+		display: inline-flex;
+		align-items: center;
 	}
-	.brand__v {
-		color: var(--accent);
+	.brand img {
+		display: block;
+		width: 2.6rem;
+		height: 2.6rem;
 	}
 
 	.nav {

@@ -4,8 +4,10 @@ export const site = {
 	name: 'Liviu-Valentin Bordea',
 	shortName: 'vBordea',
 	jobTitle: 'Software Developer & Cybersecurity Specialist',
+	// Home page <title> and meta description (keep title under ~60 and description under ~125 characters).
+	homeTitle: 'Liviu-Valentin Bordea | Portfolio',
 	description:
-		'Portfolio of Liviu-Valentin Bordea, a software developer and cybersecurity specialist building fast, accessible and secure web applications.',
+		"Welcome to my portfolio. Explore the projects I've built, what I can do, and how to get in touch.",
 	email: 'contact@valentinbordea.com',
 	cvPath: '/assets/docs/cv.pdf',
 	defaultImage: '/assets/img/seo-social-banner.jpg',

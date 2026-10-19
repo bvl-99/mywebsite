@@ -10,8 +10,7 @@
 	import { site } from '$lib/site';
 
 	// Structured data: only facts that are already stated on the site.
-	const jsonLd = {
-		'@context': 'https://schema.org',
+	const person = {
 		'@type': 'Person',
 		name: site.name,
 		url: site.url,
@@ -22,9 +21,23 @@
 		knowsAbout: ['Web development', 'Cybersecurity', 'Svelte', 'TypeScript'],
 		sameAs: site.socials.map((s) => s.href)
 	};
+
+	// Tells Google the site's name (shown above the result) in addition to the person data.
+	const jsonLd = {
+		'@context': 'https://schema.org',
+		'@graph': [
+			person,
+			{
+				'@type': 'WebSite',
+				name: site.name,
+				alternateName: ['Valentin Bordea', site.shortName],
+				url: `${site.url}/`
+			}
+		]
+	};
 </script>
 
-<Seo title="{site.name} — {site.jobTitle}" description={site.description} path="/" {jsonLd} />
+<Seo title={site.homeTitle} description={site.description} path="/" {jsonLd} />
 
 <Hero />
 <About />

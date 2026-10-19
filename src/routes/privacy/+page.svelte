@@ -30,11 +30,11 @@
 			<li>
 				<strong>Anonymous visit statistics.</strong>
 				{#if site.analytics.websiteId}
-					This site uses Umami Cloud to count visits, pages viewed, referring sites, approximate country,
-					browser and device type, and clicks on a few buttons (for example "Download CV" or opening a
-					project). It sets no cookies and builds no profile of you; according to Umami, it does not store
-					full IP addresses or use cookies or local storage. It is switched off if your browser sends a
-					"Do Not Track" signal.
+					This site uses Umami Cloud to count visits, pages viewed, referring sites, approximate
+					country, browser and device type, and clicks on a few buttons (for example "Download CV"
+					or opening a project). It sets no cookies and builds no profile of you; according to
+					Umami, it does not store full IP addresses or use cookies or local storage. It is switched
+					off if your browser sends a "Do Not Track" signal.
 				{:else}
 					None. The site currently runs no analytics.
 				{/if}

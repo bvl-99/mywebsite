@@ -40,7 +40,9 @@
 			<span class="menu-toggle__bars" aria-hidden="true"></span>
 		</button>
 
-		<nav id="site-nav" class="nav" class:open aria-label="Main">
+		<!-- Clicking any link inside the menu closes it (hash links on the same page do not always trigger navigation). -->
+		<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
+		<nav id="site-nav" class="nav" class:open aria-label="Main" onclick={(e) => { if ((e.target as HTMLElement).closest('a')) open = false; }}>
 			<ul>
 				{#each nav as item (item.href)}
 					<li><a href={item.href}>{item.label}</a></li>
@@ -87,6 +89,7 @@
 		justify-content: space-between;
 		gap: var(--space-4);
 		min-height: var(--header-h);
+		padding-block: 0.625rem; /* keeps the brand/toggle row in the same place whether the menu is open or closed */
 		flex-wrap: wrap;
 	}
 	.brand {
